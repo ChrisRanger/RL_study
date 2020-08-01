@@ -1,6 +1,6 @@
 import gym
 import numpy as np
-import time
+
 
 class SarsaAgent(object):
     def __init__(self, state_dim, act_dim, learning_rate=0.01, gamma=0.9, e_greed=0.1):
@@ -25,7 +25,7 @@ class SarsaAgent(object):
             action = np.random.choice(self.act_n)
         return action
 
-    # get ptimal action according to Q table and current state
+    # get optimal action according to Q table and current state
     def greedy(self, state):
         Q_list = self.Q[state, :] # current state's Q value
         maxQ = np.max(Q_list) # find max Q
